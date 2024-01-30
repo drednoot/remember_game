@@ -1,12 +1,35 @@
 <resources>
-    <string name="app_name">exersice1</string>
+    <string name="app_name">Remember Game</string>
+
     <string name="_11">alert</string>
     <string name="_12">boom</string>
     <string name="_21">bruh</string>
     <string name="_22">tacobell</string>
-    <string name="level">Level</string>
+
     <string name="score">score: %1$d</string>
-    <string name="highscore">High Score</string>
+    <string name="normal_mode_title">Level: %1$d - High Score: %2$d</string>
+
     <string name="restart_text">your family rejects you</string>
     <string name="restart_button">try again?</string>
+    <string name="free_play_title">Free Play</string>
+    <string name="normal_play_menu_entry">New Game</string>
+    <string name="free_play_menu_entry">Start Free Play mode</string>
+    <string name="restart_game_view_content_description">This is a restart game screen</string>
+
+    <string name="main_menu_title">memory game thing</string>
+    <string name="new_game_button">new gmae</string>
+    <string name="about_button">about</string>
+
+    <string name="about_title">About me</string>
+    <string name="image_content_description">literally me</string>
+    <string name="author_name">Anton Shastin</string>
+    <string name="author_github"><a href="https://github.com/drednoot">github.com/drednoot</a></string>
+    <string name="game_description_title">RULES:</string>
+    <string name="game_description">
+        This is a simple remembering game.
+        The rules are the following: a sequence of buttons highlight, each highlighting with a corresponding sound effect.
+        Your task is to press those buttons in the same order. See? Simple.
+        \nWell if you didn\'t get that it would be much faster to understand by just playing for a bit.
+        \n\nYou can also enter free mode which effectively comes down to being a soundpad.
+    </string>
 </resources>

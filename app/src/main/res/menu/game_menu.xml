@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/newGameMenuEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="@string/normal_play_menu_entry" />
+    <item
+        android:id="@+id/freePlayMenuEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="@string/free_play_menu_entry" />
+</menu>

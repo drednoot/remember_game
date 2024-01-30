@@ -1,12 +1,12 @@
-package com.example.exersice1
+package com.drednoot.remembergamething
 
+import android.content.Context
 import android.media.MediaPlayer
 import android.os.Handler
 import android.os.Looper
-import androidx.appcompat.app.AppCompatActivity
 
 
-class SoundPlayer(private val context: AppCompatActivity, private val bank: List<Int>) {
+class SoundPlayer(private val context: Context, private val bank: List<Int>) {
     fun play(id: Int) {
         val mediaPlayer = MediaPlayer.create(context, bank[id])
         mediaPlayer.setOnCompletionListener {
@@ -18,7 +18,7 @@ class SoundPlayer(private val context: AppCompatActivity, private val bank: List
 }
 
 class SequencePlayer(
-    private val context: AppCompatActivity,
+    private val context: Context,
     private val bank: List<Int>,
     private val interval: Long = 500
 ) {
@@ -26,12 +26,14 @@ class SequencePlayer(
     private var onEachAction: (id: Int, length: Int) -> Unit = { _: Int, _: Int -> }
     private var queue: MutableList<Int> = mutableListOf()
     private val mPlayer: MediaPlayer = MediaPlayer()
+    private var isStopped: Boolean = false
     fun play(
         sequence: List<Int>,
         initialDelay: Long = 0,
         onEachSoundAction: (id: Int, length: Int) -> Unit = { _: Int, _: Int -> },
         finishAction: () -> Unit = {},
     ) {
+        isStopped = false
         finish = finishAction
         onEachAction = onEachSoundAction
         queue = sequence.toMutableList()
@@ -39,6 +41,7 @@ class SequencePlayer(
     }
 
     private fun playNext(delay: Long) {
+        if (isStopped) return
         if (queue.isEmpty()) {
             finish()
             finish = {}
@@ -54,8 +57,15 @@ class SequencePlayer(
             playNext(interval)
         }
         Handler(Looper.getMainLooper()).postDelayed ({
-            onEachAction(id, mPlayer.duration)
-            mPlayer.start()
+            if (!isStopped) {
+                onEachAction(id, mPlayer.duration)
+                mPlayer.start()
+            }
         }, delay)
+    }
+
+    fun stop() {
+        isStopped = true
+        mPlayer.stop()
     }
 }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph"
+    app:startDestination="@id/mainMenu">
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.drednoot.remembergamething.GameFragment"
+        android:label="GameFragment"
+        tools:layout="@layout/game" />
+    <fragment
+        android:id="@+id/mainMenu"
+        android:name="com.drednoot.remembergamething.MainMenu"
+        android:label="MainMenu"
+        tools:layout="@layout/main_menu">
+        <action
+            android:id="@+id/action_mainMenu_to_gameFragment"
+            app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_mainMenu_to_aboutScreen"
+            app:destination="@id/aboutScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutScreen"
+        android:name="com.drednoot.remembergamething.AboutScreen"
+        tools:layout="@layout/about_screen"
+        android:label="AboutScreen" />
+</navigation>

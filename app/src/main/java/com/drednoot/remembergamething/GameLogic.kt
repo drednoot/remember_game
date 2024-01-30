@@ -1,6 +1,5 @@
-package com.example.exersice1
+package com.drednoot.remembergamething
 
-import java.util.EnumSet
 import kotlin.random.Random
 import kotlin.random.nextInt
 
@@ -13,10 +12,15 @@ object GameLogic {
 
     var highscore: Int = 0
         private set
+
+    var freePlay: Boolean = false
     fun inflateHighscore(fromOutside: Int) {
+        if (freePlay) return
         highscore = fromOutside
     }
-    fun press(id: Int): PressResult {
+    fun press(id: Int): PressResult? {
+        if (freePlay) return null
+        if (id !in 0..MAX_INDEX) return null
         var pressAccepted = false
         var levelIncreased = false
         var highscoreUpdated = false
@@ -37,7 +41,10 @@ object GameLogic {
         return PressResult(pressAccepted, levelIncreased, highscoreUpdated)
     }
 
-    fun getSequence(): List<Int> { return correctSequence }
+    fun getSequence(): List<Int> {
+        if (freePlay) return listOf()
+        return correctSequence
+    }
 
     private fun increaseLevel(): Boolean {
         ++level
@@ -54,6 +61,7 @@ object GameLogic {
         correctSequence = mutableListOf(Random.nextInt(0..MAX_INDEX))
         currentPress = 0
         level = 1
+        freePlay = false
     }
 }
 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="sounds">
+        <item>@raw/alert</item>
+        <item>@raw/boom</item>
+        <item>@raw/bruh</item>
+        <item>@raw/tacobell</item>
+    </array>
+</resources>

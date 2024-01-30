@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">exersice1</string>
+    <string name="_11">alert</string>
+    <string name="_12">boom</string>
+    <string name="_21">bruh</string>
+    <string name="_22">tacobell</string>
+    <string name="level">Level</string>
+    <string name="score">score: %1$d</string>
+    <string name="highscore">High Score</string>
+    <string name="restart_text">your family rejects you</string>
+    <string name="restart_button">try again?</string>
+</resources>

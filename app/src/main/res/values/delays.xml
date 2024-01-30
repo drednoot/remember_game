@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="sound_interval">100</integer>
+    <integer name="pre_sequence_delay">1000</integer>
+    <integer name="flash_background_time">1500</integer>
+    <integer name="flash_button_time">1000</integer>
+</resources>

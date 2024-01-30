@@ -6,7 +6,7 @@ Android remembering game written in kotlin
 
 This is a simple remembering game written in kotlin programming language. The game shows a player buttons to press and the player has to press those buttons in the same order. Also the game has sounds.
 
-![gameplay](misc/gameplay.gif =288x589)
+![gameplay](misc/gameplay.gif)
 
 # Installing
 

@@ -10,7 +10,7 @@ This is a simple remembering game written in kotlin programming language. The ga
 
 # Installing
 
-You can download the app and play the game by yourself. Releases page of this repository has the latest version of the game's apk.
+You can download the app and play the game by yourself. [Releases page](https://github.com/drednoot/remember_game/releases/latest) of this repository has the latest version of the game's apk.
 
 # Building
 
